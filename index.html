@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geelong Real Time</title>
+    <link rel="icon" type="image/x-icon" href="./Geelong2.png" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Power BI iframe -->
+    <iframe id="powerbi-frame" src="https://app.powerbi.com/view?r=eyJrIjoiZWRlYjQ1NzgtYWUyMS00YWNmLWEyMzctYWUyZTcwMzc5OGY2IiwidCI6IjY5YWNkMjU2LTA5NTQtNDg1Yy1iYmMyLThkMzI4ZmQ3ZjFlOCJ9" allowfullscreen="true"></iframe>
+
+    <script>
+        // Set the interval for refreshing the iframe
+        setInterval(function () {
+            saveFilters();
+            updateIframeSrc();
+        }, 300000); // Refresh every 300,000 milliseconds (5 minutes)
+    </script>
+</body>
+</html>
