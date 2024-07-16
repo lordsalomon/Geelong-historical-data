@@ -24,14 +24,16 @@
 <body>
 
     <!-- Power BI iframe -->
-    <iframe id="powerbi-frame" src="https://app.powerbi.com/view?r=eyJrIjoiZWRlYjQ1NzgtYWUyMS00YWNmLWEyMzctYWUyZTcwMzc5OGY2IiwidCI6IjY5YWNkMjU2LTA5NTQtNDg1Yy1iYmMyLThkMzI4ZmQ3ZjFlOCJ9" allowfullscreen="true"></iframe>
+    <iframe id="powerbi-frame" src="https://app.powerbi.com/view?r=eyJrIjoiMWFiYzA1YzYtNTYyOC00ZjY1LTg1NjctNzNiYjAwMDIyNjdmIiwidCI6IjY5YWNkMjU2LTA5NTQtNDg1Yy1iYmMyLThkMzI4ZmQ3ZjFlOCJ9" allowfullscreen="true"></iframe>
 
     <script>
         // Set the interval for refreshing the iframe
         setInterval(function () {
-            saveFilters();
-            updateIframeSrc();
-        }, 300000); // Refresh every 300,000 milliseconds (5 minutes)
+            // Refresh the iframe by updating its src attribute
+            var iframe = document.getElementById('powerbi-frame');
+            var src = iframe.src;
+            iframe.src = src;
+        }, 3600000); // Refresh every 3,600,000 milliseconds (1 hour)
     </script>
 </body>
 </html>
