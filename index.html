@@ -29,10 +29,12 @@
     <script>
         // Set the interval for refreshing the iframe
         setInterval(function () {
-            // Refresh the iframe by updating its src attribute
+            // Refresh the iframe by temporarily clearing its src attribute
             var iframe = document.getElementById('powerbi-frame');
             var src = iframe.src;
-            iframe.src = src;
+            iframe.src = ''; // Clear the src attribute
+            iframe.src = src; // Reset the src attribute to force a reload
+            console.log('Iframe source updated.');
         }, 3600000); // Refresh every 3,600,000 milliseconds (1 hour)
     </script>
 </body>
